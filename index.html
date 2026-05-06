@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Dhyll J. Padillo | Social Media Manager & Video Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        
+        :root { scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.4s ease; }
+        
+        .gradient-text { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%); }
+
+        /* THE SELFIE FLASH ANIMATION */
+        .flash-active { animation: screen-flash 0.5s ease-out; }
+        @keyframes screen-flash {
+            0% { background-color: #f8fafc; }
+            30% { background-color: #818cf8; }
+            100% { background-color: #f8fafc; }
+        }
+
+        .shutter-overlay {
+            position: absolute;
+            inset: 0; background: white; opacity: 0;
+            z-index: 50; border-radius: 2rem; pointer-events: none;
+        }
+        .selfie-container:hover .shutter-overlay { animation: shutter-blink 0.4s ease-out; }
+        @keyframes shutter-blink {
+            0% { opacity: 0; }
+            20% { opacity: 0.9; }
+            100% { opacity: 0; }
+        }
+
+        .skill-tag {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 2px rgb(15 23 42 / 0.04);
+            color: #334155;
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+        }
+
+        .portfolio-video {
+            aspect-ratio: 9 / 16;
+            background: #020617;
+        }
+
+        .portfolio-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-showcase {
+            aspect-ratio: 4 / 5;
+            background: #0f172a;
+        }
+
+        .product-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-showcase-wide {
+            aspect-ratio: 16 / 10;
+        }
+
+        .story-showcase {
+            aspect-ratio: 9 / 16;
+            background: #0f172a;
+        }
+
+        .story-showcase img,
+        .tracker-showcase img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tracker-showcase {
+            aspect-ratio: 16 / 7;
+            background: #0f172a;
+        }
+
+        /* TikTok-inspired creator portfolio skin */
+        :root {
+            --tt-cyan: #25f4ee;
+            --tt-pink: #fe2c55;
+            --tt-ink: #050507;
+            --tt-card: #11131a;
+            --tt-line: rgba(255, 255, 255, 0.1);
+        }
+
+        body.bg-slate-50 {
+            background:
+                radial-gradient(circle at 12% 12%, rgba(37, 244, 238, 0.16), transparent 28%),
+                radial-gradient(circle at 88% 18%, rgba(254, 44, 85, 0.16), transparent 25%),
+                linear-gradient(180deg, #050507 0%, #0b0d12 42%, #050507 100%) !important;
+            color: #f8fafc;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 72%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--tt-cyan), #ffffff 45%, var(--tt-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(8px 0 0 rgba(254,44,85,0.18)) drop-shadow(-8px 0 0 rgba(37,244,238,0.18));
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, var(--tt-cyan), var(--tt-pink));
+            box-shadow: 0 18px 45px rgba(254, 44, 85, 0.22), 0 0 0 1px rgba(255,255,255,0.12) inset;
+        }
+
+        nav.bg-white\/80 {
+            background: rgba(5, 5, 7, 0.82) !important;
+            border-bottom-color: var(--tt-line) !important;
+        }
+
+        nav a,
+        nav span {
+            color: #f8fafc;
+        }
+
+        nav a:hover {
+            color: var(--tt-cyan) !important;
+        }
+
+        body > section:first-of-type {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body > section:first-of-type::after {
+            content: "SMM  VIDEO  AI  CTA";
+            bottom: 2rem;
+            color: rgba(255,255,255,0.04);
+            font-size: clamp(3rem, 11vw, 10rem);
+            font-weight: 900;
+            left: 50%;
+            letter-spacing: 0;
+            line-height: 1;
+            pointer-events: none;
+            position: absolute;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: -1;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            letter-spacing: 0 !important;
+        }
+
+        body > section:first-of-type h1,
+        #portfolio h2,
+        footer h2 {
+            color: #ffffff;
+        }
+
+        body > section:first-of-type h2,
+        section h3.text-indigo-600,
+        .text-indigo-300,
+        .text-emerald-300,
+        .text-cyan-300,
+        .text-purple-300 {
+            color: var(--tt-cyan) !important;
+        }
+
+        .text-slate-500,
+        .text-slate-400 {
+            color: #aab3c2 !important;
+        }
+
+        .selfie-container {
+            animation: creator-float 5s ease-in-out infinite;
+        }
+
+        @keyframes creator-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .selfie-container > .relative {
+            border-color: rgba(255,255,255,0.1) !important;
+            border-radius: 2rem !important;
+            box-shadow:
+                20px 20px 0 rgba(254,44,85,0.28),
+                -20px -20px 0 rgba(37,244,238,0.24),
+                0 35px 80px rgba(0,0,0,0.55) !important;
+        }
+
+        #about,
+        section.bg-white,
+        #experience {
+            background: transparent !important;
+        }
+
+        #about .bg-slate-50,
+        #about .bg-slate-900,
+        #experience .bg-white,
+        .skill-tag,
+        footer {
+            background: rgba(255,255,255,0.055) !important;
+            border: 1px solid var(--tt-line) !important;
+            color: #f8fafc !important;
+            backdrop-filter: blur(16px);
+        }
+
+        #about .bg-slate-50,
+        #about .bg-slate-900,
+        #experience .bg-white {
+            box-shadow: 0 24px 70px rgba(0,0,0,0.25);
+        }
+
+        #about .w-12,
+        #experience span.bg-slate-100 {
+            background: rgba(37,244,238,0.1) !important;
+            color: var(--tt-cyan) !important;
+        }
+
+        .skill-tag {
+            border-radius: 999px;
+            box-shadow: none;
+        }
+
+        #portfolio {
+            background:
+                radial-gradient(circle at 20% 8%, rgba(37,244,238,0.12), transparent 28%),
+                radial-gradient(circle at 78% 20%, rgba(254,44,85,0.13), transparent 26%),
+                #050507 !important;
+            border-top: 1px solid var(--tt-line);
+            border-radius: 3rem 3rem 0 0 !important;
+        }
+
+        #portfolio > div > div,
+        #portfolio .space-y-4,
+        #portfolio .space-y-5,
+        #portfolio .space-y-6 {
+            position: relative;
+        }
+
+        .portfolio-video,
+        .story-showcase,
+        .product-showcase,
+        .tracker-showcase {
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1.35rem !important;
+            box-shadow: 0 22px 60px rgba(0,0,0,0.34);
+            overflow: hidden;
+            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+        }
+
+        .portfolio-video:hover,
+        .story-showcase:hover,
+        .product-showcase:hover,
+        .tracker-showcase:hover {
+            border-color: rgba(37,244,238,0.55);
+            box-shadow: 0 24px 70px rgba(37,244,238,0.12), 0 18px 50px rgba(254,44,85,0.1);
+            transform: translateY(-6px);
+        }
+
+        .story-showcase img,
+        .product-showcase img,
+        .tracker-showcase img {
+            transition: transform 450ms ease, filter 450ms ease;
+        }
+
+        .story-showcase:hover img,
+        .product-showcase:hover img,
+        .tracker-showcase:hover img {
+            filter: saturate(1.08) contrast(1.04);
+            transform: scale(1.035);
+        }
+
+        #portfolio h4 {
+            line-height: 1.2;
+            min-height: 2.4em;
+        }
+
+        #portfolio p {
+            line-height: 1.65;
+        }
+
+        footer.bg-slate-900 {
+            background: #050507 !important;
+            border-top-color: var(--tt-line) !important;
+        }
+
+        @media (max-width: 768px) {
+            body > section:first-of-type::after {
+                display: none;
+            }
+
+            .selfie-container > .relative {
+                box-shadow:
+                    10px 10px 0 rgba(254,44,85,0.24),
+                    -10px -10px 0 rgba(37,244,238,0.2),
+                    0 25px 60px rgba(0,0,0,0.5) !important;
+            }
+        }
+
+        /* Reference-video style motion layer */
+        .motion-reveal {
+            opacity: 0;
+            transform: translateY(26px) scale(0.985);
+            transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
+        }
+
+        .motion-reveal.motion-in {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .motion-board {
+            display: grid;
+            gap: 0.85rem;
+            grid-template-columns: repeat(4, minmax(70px, 1fr));
+            margin-top: 2rem;
+            max-width: 520px;
+            perspective: 900px;
+        }
+
+        .motion-shot {
+            aspect-ratio: 9 / 16;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 1.2rem;
+            box-shadow: 0 18px 55px rgba(0,0,0,0.32);
+            overflow: hidden;
+            position: relative;
+            transform: rotate(var(--tilt)) translateY(var(--lift));
+            transition: transform 260ms ease, box-shadow 260ms ease;
+        }
+
+        .motion-shot:nth-child(1) { --tilt: -5deg; --lift: 0; animation: card-float-a 5.4s ease-in-out infinite; }
+        .motion-shot:nth-child(2) { --tilt: 3deg; --lift: 18px; animation: card-float-b 5.8s ease-in-out infinite; }
+        .motion-shot:nth-child(3) { --tilt: -2deg; --lift: 4px; animation: card-float-a 6.1s ease-in-out infinite; }
+        .motion-shot:nth-child(4) { --tilt: 5deg; --lift: 22px; animation: card-float-b 5.2s ease-in-out infinite; }
+
+        .motion-shot:hover {
+            box-shadow: 0 22px 68px rgba(37,244,238,0.16), 0 18px 50px rgba(254,44,85,0.14);
+            transform: rotate(0deg) translateY(-10px) scale(1.035);
+        }
+
+        .motion-shot img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .motion-shot::after {
+            background: linear-gradient(180deg, transparent 48%, rgba(0,0,0,0.72));
+            content: "";
+            inset: 0;
+            position: absolute;
+        }
+
+        .motion-shot span {
+            bottom: 0.75rem;
+            color: white;
+            font-size: 0.66rem;
+            font-weight: 900;
+            left: 0.75rem;
+            letter-spacing: 0.11em;
+            position: absolute;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        @keyframes card-float-a {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -10px; }
+        }
+
+        @keyframes card-float-b {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 8px; }
+        }
+
+        .reel-marquee {
+            border-block: 1px solid rgba(255,255,255,0.1);
+            margin-top: 5rem;
+            overflow: hidden;
+            padding-block: 1rem;
+        }
+
+        .reel-track {
+            animation: reel-scroll 22s linear infinite;
+            color: rgba(255,255,255,0.82);
+            display: flex;
+            font-size: clamp(1.25rem, 4vw, 3rem);
+            font-weight: 900;
+            gap: 2rem;
+            letter-spacing: 0;
+            white-space: nowrap;
+            width: max-content;
+        }
+
+        .reel-track span:nth-child(even) {
+            color: var(--tt-cyan);
+            text-shadow: 3px 0 rgba(254,44,85,0.55);
+        }
+
+        @keyframes reel-scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .motion-reveal,
+            .motion-reveal.motion-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .motion-shot,
+            .reel-track,
+            .selfie-container {
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+
+    <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-2xl font-black tracking-tighter gradient-text">JDP.SMM</span>
+            <div class="hidden md:flex items-center space-x-8 font-bold text-[10px] uppercase tracking-[0.2em]">
+                <a href="#about" class="hover:text-indigo-600 transition">About</a>
+                <a href="#experience" class="hover:text-indigo-600 transition">Experience</a>
+                <a href="#portfolio" class="hover:text-indigo-600 transition">Portfolio</a>
+                <a href="https://drive.google.com/drive/folders/1gTzPPbOwiAuGmIYSPe7WwBNWAtjR-fo6?usp=sharing" target="_blank" class="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-indigo-600 transition">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-indigo-600 font-bold tracking-[0.3em] text-xs uppercase mb-6">Quezon-Based Social Media Manager</h2>
+                <h1 class="text-6xl md:text-8xl font-black leading-none mb-8 tracking-tighter">
+                    JOHN DHYLL <br><span class="gradient-text">PADILLO.</span>
+                </h1>
+                <p class="text-lg text-slate-500 mb-10 leading-relaxed max-w-md">
+                    Professional <strong>Social Media Manager (SMM)</strong>, <strong>Video Editor</strong>, and <strong>AI Video Creator</strong>. I combine creative strategy, short-form editing, and AI-assisted content production to drive engagement.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="mailto:jedjedp@gmail.com" class="gradient-bg text-white px-10 py-4 rounded-2xl font-bold text-center shadow-xl shadow-indigo-200 hover:scale-105 transition">Work With Me</a>
+                    <div class="flex items-center justify-center gap-6 px-6 py-4 bg-white rounded-2xl border border-slate-100">
+                        <a href="https://instagram.com/Akihirojd" class="text-xl text-slate-400 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-xl text-slate-400 hover:text-black transition"><i class="fab fa-tiktok"></i></a>
+                        <a href="tel:+639670360019" class="text-xl text-slate-400 hover:text-indigo-500 transition"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+                <div class="motion-board">
+                    <a href="#portfolio" class="motion-shot">
+                        <img src="assets/images/smm-storytelling/story-course-cta.jpg" alt="SMM story CTA preview">
+                        <span>Story CTA</span>
+                    </a>
+                    <a href="#portfolio" class="motion-shot">
+                        <img src="assets/images/cleo-glam-care/spa-service-design.png" alt="Product design preview">
+                        <span>Design</span>
+                    </a>
+                    <a href="#portfolio" class="motion-shot">
+                        <img src="assets/images/smm-storytelling/story-tracker.png" alt="Tracking preview">
+                        <span>Tracking</span>
+                    </a>
+                    <a href="#portfolio" class="motion-shot">
+                        <img src="assets/images/cleo-glam-care/kids-conditioner.jpeg" alt="Product edit preview">
+                        <span>Product</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="selfie-container relative cursor-pointer" onmouseenter="document.body.classList.add('flash-active')" onmouseleave="document.body.classList.remove('flash-active')">
+                    <div class="shutter-overlay"></div>
+                    <div class="relative z-10 overflow-hidden rounded-[3rem] shadow-2xl border-[12px] border-white w-72 h-96 md:w-[400px] md:h-[550px]">
+                        <img src="profile.jpg" alt="John Dhyll Padillo" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 z-20 pointer-events-none p-12 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition">
+                        <div class="flex justify-between text-white/50 text-xs font-mono"><span>[ ]</span><span>4K 60FPS</span></div>
+                        <div class="flex justify-center text-white/50 text-xs font-mono"><span>ISO 400</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20">
+            <div>
+                <h3 class="text-indigo-600 font-bold uppercase tracking-widest text-xs mb-4">The Background</h3>
+                <h2 class="text-4xl font-black mb-8 tracking-tight">Academic Excellence</h2>
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-2xl bg-indigo-50 flex items-center justify-center text-indigo-600 shrink-0"><i class="fas fa-university"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">BS Information Systems (3rd Year)</h4>
+                            <p class="text-slate-500">Lyceum Technological College</p>
+                            <p class="text-indigo-600 font-bold text-sm mt-1 underline">Consistent President's Lister Awardee</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-600 shrink-0"><i class="fas fa-certificate"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">TESDA Certified Specialist</h4>
+                            <p class="text-slate-500">Computer System Servicing (CSS) NC II</p>
+                            <p class="text-slate-500">Bread and Pastry Production (BPP) NC II</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-slate-50 p-6 rounded-3xl">
+                    <h5 class="font-bold text-slate-400 uppercase text-[10px] mb-4">Personal Details</h5>
+                    <p class="text-sm"><strong>Birth:</strong> Nov 2, 2004</p>
+                    <p class="text-sm"><strong>From:</strong> Lucena City</p>
+                    <p class="text-sm"><strong>Based:</strong> Candelaria, Quezon</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-3xl text-white">
+                    <h5 class="font-bold text-slate-500 uppercase text-[10px] mb-4">Career Objective</h5>
+                    <p class="text-xs italic leading-relaxed">"Creating scroll-stopping social media content through strategy, video editing, and AI-assisted visuals that help brands grow engagement and sales."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-black mb-16 text-center tracking-tighter">Professional Journey</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                    <span class="text-xs font-bold text-indigo-500">2023 - Present</span>
+                    <h3 class="text-xl font-extrabold mt-2 mb-4">Social Media Manager & Video Editor</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Collaborating with clients to plan content, edit videos, and manage social media across TikTok, Instagram, and Facebook.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Analytics</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Strategy</span>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                    <span class="text-xs font-bold text-purple-500">E-commerce Specialist</span>
+                    <h3 class="text-xl font-extrabold mt-2 mb-4">Buy & Sell Online</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Successfully generating revenue through e-commerce activities and strategic marketing on online buy-and-sell platforms.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Sales</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Marketplace</span>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                    <span class="text-xs font-bold text-slate-400">Previous</span>
+                    <h3 class="text-xl font-extrabold mt-2 mb-4">Service Crew / Canteen Staff</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Involved in food preparation and high-pressure kitchen environments. Developed strong work ethic and task management skills.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Reliability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-center font-black text-3xl mb-12 italic">Technical Toolkit</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="skill-tag">Video Editing (CapCut, VN, Canva)</span>
+                <span class="skill-tag">AI Video Creation</span>
+                <span class="skill-tag">Social Media Management</span>
+                <span class="skill-tag">TikTok Affiliate Marketing</span>
+                <span class="skill-tag">Short-Form Content Creation</span>
+                <span class="skill-tag">PC Troubleshooting</span>
+                <span class="skill-tag">Basic Electrical Wiring</span>
+                <span class="skill-tag">Social Media Analytics</span>
+                <span class="skill-tag">Copywriting</span>
+                <span class="skill-tag">English Communication</span>
+                <span class="skill-tag">Time Management</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-24 bg-slate-900 text-white rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="reel-marquee">
+                <div class="reel-track">
+                    <span>SMM STORYTELLING</span>
+                    <span>VIDEO EDITING</span>
+                    <span>AI VIDEO CREATOR</span>
+                    <span>PRODUCT DESIGN</span>
+                    <span>CTA STRATEGY</span>
+                    <span>SMM STORYTELLING</span>
+                    <span>VIDEO EDITING</span>
+                    <span>AI VIDEO CREATOR</span>
+                    <span>PRODUCT DESIGN</span>
+                    <span>CTA STRATEGY</span>
+                </div>
+            </div>
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+                <div>
+                    <h3 class="text-indigo-300 font-bold uppercase tracking-widest text-xs mb-4">Featured Portfolio</h3>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Real Estate Video Ads</h2>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                    Edited short-form property marketing videos for Established Realty Group, built for social media ads with clear pacing, polished visuals, and scroll-stopping presentation.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-[minmax(260px,380px)_1fr] gap-10 items-start">
+                <div class="space-y-5">
+                    <div class="portfolio-video rounded-[2rem] overflow-hidden border border-slate-700 shadow-2xl shadow-black/30">
+                        <video controls preload="metadata">
+                            <source src="assets/videos/real-estate-ad-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold">Property Ad Edit 01</h4>
+                        <p class="text-slate-400 text-sm mt-2">A vertical real estate ad sample showing my pacing, transitions, and mobile-first video editing style.</p>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-3xl overflow-hidden border border-slate-700">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/real-estate-ad-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">Property Ad Edit 02</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-3xl overflow-hidden border border-slate-700">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/real-estate-ad-3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">Property Ad Edit 03</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-3xl overflow-hidden border border-slate-700">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/real-estate-ad-4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">Property Ad Edit 04</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-3xl overflow-hidden border border-slate-700">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/real-estate-ad-5.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">Property Ad Edit 05</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-24 border-t border-slate-800 pt-20">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                    <div>
+                        <h3 class="text-emerald-300 font-bold uppercase tracking-widest text-xs mb-4">SMM Storytelling & CTA</h3>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Story Content Examples</h2>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                        Social media story samples built around hooks, narrative copy, clear calls to action, and performance tracking for better content decisions.
+                    </p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                        <img src="assets/images/smm-storytelling/story-course-cta.jpg" alt="Storytelling call to action course story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                        <img src="assets/images/smm-storytelling/story-business-outsourcing.jpg" alt="Business storytelling story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                        <img src="assets/images/smm-storytelling/story-fail-fast.jpg" alt="Motivational story copy sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                        <img src="assets/images/smm-storytelling/story-personal-life-business.jpg" alt="Personal growth storytelling story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                        <img src="assets/images/smm-storytelling/story-focus-one-thing.jpg" alt="Entrepreneurship storytelling story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/smm-storytelling/story-why-goals.jpg" alt="Purpose driven story copy sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/smm-storytelling/story-amazon-leverage.jpg" alt="Amazon content story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/smm-storytelling/story-business-proof.jpg" alt="Business proof story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/smm-storytelling/story-seat-table-golf.webp" alt="Seat at the table story sample">
+                    </div>
+                    <div class="story-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/smm-storytelling/story-seat-table-coffee.webp" alt="Coffee shop story copy sample">
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <div class="tracker-showcase rounded-[2rem] overflow-hidden border border-slate-700">
+                            <img src="assets/images/smm-storytelling/story-tracker.png" alt="Story sequence performance tracker screenshot">
+                        </div>
+                        <h4 class="font-bold mt-4">Story Sequence Tracker</h4>
+                    </div>
+                    <div>
+                        <div class="tracker-showcase rounded-[2rem] overflow-hidden border border-slate-700">
+                            <img src="assets/images/smm-storytelling/video-performance-tracker.png" alt="Video performance tracker screenshot">
+                        </div>
+                        <h4 class="font-bold mt-4">Video Performance Tracker</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-24 border-t border-slate-800 pt-20">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                    <div>
+                        <h3 class="text-cyan-300 font-bold uppercase tracking-widest text-xs mb-4">AI Video Creator</h3>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter">AI Video Samples</h2>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                        AI-assisted video samples for short-form content, combining generated visuals, editing flow, and social media-ready pacing.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-[2rem] overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/ai-video-creator/example-video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">AI Video Example</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-[2rem] overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/ai-video-creator/trial-task-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">AI Trial Task 01</h4>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="portfolio-video rounded-[2rem] overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
+                            <video controls preload="metadata">
+                                <source src="assets/videos/ai-video-creator/trial-task-2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <h4 class="font-bold">AI Trial Task 02</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-24 border-t border-slate-800 pt-20">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                    <div>
+                        <h3 class="text-purple-300 font-bold uppercase tracking-widest text-xs mb-4">Product Editing & Design</h3>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter">Product Design Examples</h2>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                        Product mockups, beauty visuals, and social media-ready designs with clean product focus, soft lighting, and polished promotional layouts.
+                    </p>
+                </div>
+
+                <div class="mb-6">
+                    <div class="bg-slate-950 rounded-[2rem] overflow-hidden border border-slate-700 shadow-2xl shadow-black/30">
+                        <video class="w-full max-h-[720px] object-contain bg-black" controls preload="metadata">
+                            <source src="assets/videos/product-design-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h4 class="text-2xl font-bold mt-5">Product Design Video Sample</h4>
+                    <p class="text-slate-400 text-sm mt-2">A product-focused motion sample for social media and promotional use.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
+                    <div class="product-showcase product-showcase-wide rounded-[2rem] overflow-hidden border border-slate-700 shadow-2xl shadow-black/30">
+                        <img src="assets/images/cleo-glam-care/spa-service-design.png" alt="Spa service promotional design example">
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                            <img src="assets/images/cleo-glam-care/purple-product-set.png" alt="Purple product set design example">
+                        </div>
+                        <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                            <img src="assets/images/cleo-glam-care/purple-hair-growth-oil.png" alt="Hair growth oil mockup example">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/kids-conditioner.jpeg" alt="Kids detangling conditioner product edit">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/kids-hair-oil.jpeg" alt="Kids moisturizing hair oil product edit">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/kids-curl-conditioner.jpeg" alt="Kids curl leave-in conditioner product edit">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/kids-shampoo-body-wash.jpeg" alt="Kids shampoo and body wash product edit">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/purple-conditioner-shampoo.png" alt="Purple conditioner and shampoo product design">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/purple-hair-mask.png" alt="Purple hair mask product design">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/kids-edge-control-open.jpeg" alt="Kids edge control open jar product edit">
+                    </div>
+                    <div class="product-showcase rounded-3xl overflow-hidden border border-slate-700">
+                        <img src="assets/images/cleo-glam-care/kids-edge-control-closeup.jpeg" alt="Kids edge control closeup product edit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-24 bg-slate-900 text-white border-t border-slate-800 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-5xl font-black tracking-tighter mb-8">Let's Connect.</h2>
+                <div class="space-y-4">
+                    <p class="flex items-center gap-4"><i class="fas fa-envelope text-indigo-500"></i> jedjedp@gmail.com</p>
+                    <p class="flex items-center gap-4"><i class="fab fa-whatsapp text-green-500"></i> +63 967 036 0019</p>
+                    <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-red-500"></i> Purok 4, Malabanban Sur, Candelaria, Quezon</p>
+                </div>
+            </div>
+            <div class="text-right flex flex-col justify-end">
+                <p class="text-slate-600 text-[10px] uppercase tracking-[0.5em] mb-4">True and Correct Information</p>
+                <p class="text-slate-400 text-sm">&copy; 2026 John Dhyll J. Padillo. Social Media Manager & Video Editor.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const motionItems = document.querySelectorAll('section:not(:first-of-type) > div, .portfolio-video, .story-showcase, .product-showcase, .tracker-showcase');
+
+        motionItems.forEach((item) => item.classList.add('motion-reveal'));
+
+        const motionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('motion-in');
+                    motionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        motionItems.forEach((item) => motionObserver.observe(item));
+    </script>
+</body>
+</html>

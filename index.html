@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Dhyll J. Padillo | Social Media Manager & Video Editor</title>
+    <title>John Dhyll J. Padillo | Social Media Manager, Video Editor & AI Programmer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -44,6 +44,192 @@
             font-size: 0.875rem;
             font-weight: 700;
             padding: 0.5rem 1rem;
+        }
+
+        .toolkit-panel {
+            background:
+                radial-gradient(circle at 12% 20%, rgba(37,244,238,0.13), transparent 28%),
+                radial-gradient(circle at 82% 16%, rgba(254,44,85,0.12), transparent 26%),
+                rgba(255,255,255,0.045);
+            border: 1px solid var(--tt-line);
+            border-radius: 2rem;
+            box-shadow: 0 28px 80px rgba(0,0,0,0.26);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .toolkit-panel::before {
+            animation: scan-line 7s linear infinite;
+            background: linear-gradient(90deg, transparent, rgba(37,244,238,0.28), transparent);
+            content: "";
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        @keyframes scan-line {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100%); }
+        }
+
+        .tool-category {
+            color: var(--tt-cyan);
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .tool-card {
+            align-items: center;
+            background: rgba(255,255,255,0.065);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 1rem;
+            display: flex;
+            gap: 0.85rem;
+            min-height: 76px;
+            padding: 0.9rem;
+            position: relative;
+            transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+        }
+
+        .tool-card:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(37,244,238,0.44);
+            box-shadow: 0 18px 46px rgba(37,244,238,0.11), 0 16px 42px rgba(254,44,85,0.09);
+            transform: translateY(-5px);
+        }
+
+        .tool-icon {
+            align-items: center;
+            border-radius: 0.9rem;
+            color: #ffffff;
+            display: flex;
+            flex: 0 0 42px;
+            font-size: 1.18rem;
+            height: 42px;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            width: 42px;
+        }
+
+        .tool-icon::after {
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
+            content: "";
+            inset: 0;
+            position: absolute;
+            transform: translateX(-120%);
+            transition: transform 520ms ease;
+        }
+
+        .tool-card:hover .tool-icon::after {
+            transform: translateX(120%);
+        }
+
+        .tool-google { background: linear-gradient(135deg, #4285f4, #34a853 48%, #fbbc05 49%, #ea4335); }
+        .tool-meta { background: linear-gradient(135deg, #0866ff, #25f4ee); }
+        .tool-edit { background: linear-gradient(135deg, #111827, #fe2c55); }
+        .tool-ai { background: linear-gradient(135deg, #7c3aed, #25f4ee); }
+        .tool-office { background: linear-gradient(135deg, #2563eb, #16a34a); }
+        .tool-realestate { background: linear-gradient(135deg, #0f766e, #22c55e); }
+        .tool-workflow { background: linear-gradient(135deg, #f97316, #ec4899); }
+
+        .tool-name {
+            color: #ffffff;
+            font-size: 0.92rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .tool-use {
+            color: #aab3c2;
+            font-size: 0.72rem;
+            line-height: 1.35;
+            margin-top: 0.2rem;
+        }
+
+        .workflow-card {
+            background: rgba(5,5,7,0.38);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 1.15rem;
+            padding: 1.15rem;
+        }
+
+        .client-card {
+            background: rgba(255,255,255,0.055);
+            border: 1px solid var(--tt-line);
+            border-radius: 1.25rem;
+            box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+            color: #f8fafc;
+            padding: 1.5rem;
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+        }
+
+        .client-card:hover {
+            border-color: rgba(37,244,238,0.45);
+            box-shadow: 0 24px 70px rgba(37,244,238,0.1), 0 20px 54px rgba(254,44,85,0.08);
+            transform: translateY(-5px);
+        }
+
+        .client-icon {
+            align-items: center;
+            background: linear-gradient(135deg, rgba(37,244,238,0.22), rgba(254,44,85,0.18));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 1rem;
+            color: var(--tt-cyan);
+            display: flex;
+            height: 48px;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            width: 48px;
+        }
+
+        .availability-badge {
+            align-items: center;
+            background: rgba(34,197,94,0.12);
+            border: 1px solid rgba(34,197,94,0.28);
+            border-radius: 999px;
+            color: #86efac;
+            display: inline-flex;
+            font-size: 0.78rem;
+            font-weight: 800;
+            gap: 0.55rem;
+            padding: 0.5rem 0.85rem;
+        }
+
+        .availability-badge::before {
+            animation: pulse-dot 1.8s ease-in-out infinite;
+            background: #22c55e;
+            border-radius: 999px;
+            box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+            content: "";
+            height: 8px;
+            width: 8px;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+            50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+        }
+
+        .project-meta {
+            display: grid;
+            gap: 0.55rem;
+            margin-top: 0.9rem;
+        }
+
+        .project-meta span {
+            color: #cbd5e1;
+            display: block;
+            font-size: 0.78rem;
+            line-height: 1.45;
+        }
+
+        .project-meta strong {
+            color: var(--tt-cyan);
         }
 
         .portfolio-video {
@@ -461,8 +647,10 @@
             <span class="text-2xl font-black tracking-tighter gradient-text">JDP.SMM</span>
             <div class="hidden md:flex items-center space-x-8 font-bold text-[10px] uppercase tracking-[0.2em]">
                 <a href="#about" class="hover:text-indigo-600 transition">About</a>
-                <a href="#experience" class="hover:text-indigo-600 transition">Experience</a>
+                <a href="#services" class="hover:text-indigo-600 transition">Services</a>
+                <a href="#tools" class="hover:text-indigo-600 transition">Tools</a>
                 <a href="#portfolio" class="hover:text-indigo-600 transition">Portfolio</a>
+                <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
                 <a href="https://drive.google.com/drive/folders/1gTzPPbOwiAuGmIYSPe7WwBNWAtjR-fo6?usp=sharing" target="_blank" class="bg-slate-900 text-white px-6 py-2 rounded-full hover:bg-indigo-600 transition">Resume</a>
             </div>
         </div>
@@ -471,15 +659,17 @@
     <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-indigo-600 font-bold tracking-[0.3em] text-xs uppercase mb-6">Quezon-Based Social Media Manager</h2>
+                <h2 class="text-indigo-600 font-bold tracking-[0.3em] text-xs uppercase mb-6">Quezon-Based Social Media Manager & AI Programmer</h2>
                 <h1 class="text-6xl md:text-8xl font-black leading-none mb-8 tracking-tighter">
                     JOHN DHYLL <br><span class="gradient-text">PADILLO.</span>
                 </h1>
+                <div class="availability-badge mb-6">Available for freelance clients</div>
                 <p class="text-lg text-slate-500 mb-10 leading-relaxed max-w-md">
-                    Professional <strong>Social Media Manager (SMM)</strong>, <strong>Video Editor</strong>, and <strong>AI Video Creator</strong>. I combine creative strategy, short-form editing, and AI-assisted content production to drive engagement.
+                    Professional <strong>Social Media Manager (SMM)</strong>, <strong>Video Editor</strong>, <strong>Programmer</strong>, and <strong>AI Programmer</strong> helping real estate and small business brands create content, tools, and AI-assisted workflows that get attention.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="mailto:jedjedp@gmail.com" class="gradient-bg text-white px-10 py-4 rounded-2xl font-bold text-center shadow-xl shadow-indigo-200 hover:scale-105 transition">Work With Me</a>
+                    <a href="#contact" class="gradient-bg text-white px-10 py-4 rounded-2xl font-bold text-center shadow-xl shadow-indigo-200 hover:scale-105 transition">Hire Me</a>
+                    <a href="#portfolio" class="text-white px-10 py-4 rounded-2xl font-bold text-center border border-white/15 bg-white/5 hover:border-cyan-300/60 transition">See My Work</a>
                     <div class="flex items-center justify-center gap-6 px-6 py-4 bg-white rounded-2xl border border-slate-100">
                         <a href="https://instagram.com/Akihirojd" class="text-xl text-slate-400 hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-xl text-slate-400 hover:text-black transition"><i class="fab fa-tiktok"></i></a>
@@ -516,6 +706,63 @@
                         <div class="flex justify-between text-white/50 text-xs font-mono"><span>[ ]</span><span>4K 60FPS</span></div>
                         <div class="flex justify-center text-white/50 text-xs font-mono"><span>ISO 400</span></div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+                <div>
+                    <h3 class="text-indigo-300 font-bold uppercase text-xs mb-4">Services</h3>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white">What Clients Can Hire Me For</h2>
+                </div>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                    Creative support for brands that need consistent content, clean edits, organized posting, and social-ready visuals without the back-and-forth confusion.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3 class="text-xl font-black mb-3">Social Media Management</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Content planning, posting support, captions, engagement tracking, and organized brand presence across social platforms.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-clapperboard"></i></div>
+                    <h3 class="text-xl font-black mb-3">Short-Form Video Editing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">TikTok, Reels, and Shorts edits with hooks, pacing, captions, transitions, and mobile-first presentation.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-house-chimney"></i></div>
+                    <h3 class="text-xl font-black mb-3">Real Estate Video Ads</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Property-focused video edits and listing visuals designed for Facebook, Instagram, TikTok, and real estate campaigns.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3 class="text-xl font-black mb-3">AI Video Creation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">AI-assisted visuals, creative concepts, and generated video assets using tools like Google Gemini AI and Higgsfield AI.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="text-xl font-black mb-3">Programming & AI Automation</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Simple websites, workflow tools, AI-assisted scripts, and automations that help clients save time and organize work.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3 class="text-xl font-black mb-3">Flyer & Promo Design</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Clean promotional graphics, social media stories, product layouts, and real estate flyer edits for campaigns.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="text-xl font-black mb-3">Content Strategy & Reports</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Simple trackers, performance notes, content ideas, and organized reports clients can understand quickly.</p>
+                </div>
+                <div class="client-card">
+                    <div class="client-icon"><i class="fas fa-inbox"></i></div>
+                    <h3 class="text-xl font-black mb-3">Client Admin Support</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Organized files, communication support, research, listing details, and task tracking for smoother remote work.</p>
                 </div>
             </div>
         </div>
@@ -566,11 +813,12 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
                     <span class="text-xs font-bold text-indigo-500">2023 - Present</span>
-                    <h3 class="text-xl font-extrabold mt-2 mb-4">Social Media Manager & Video Editor</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Collaborating with clients to plan content, edit videos, and manage social media across TikTok, Instagram, and Facebook.</p>
+                    <h3 class="text-xl font-extrabold mt-2 mb-4">Social Media Manager, Video Editor & AI Programmer</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Collaborating with clients to plan content, edit videos, manage social media, and build simple AI-assisted workflows for faster creative work.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Analytics</span>
                         <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">Strategy</span>
+                        <span class="text-[10px] bg-slate-100 px-2 py-1 rounded">AI Tools</span>
                     </div>
                 </div>
                 <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm">
@@ -596,19 +844,270 @@
 
     <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-center font-black text-3xl mb-12 italic">Technical Toolkit</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="skill-tag">Video Editing (CapCut, VN, Canva)</span>
-                <span class="skill-tag">AI Video Creation</span>
-                <span class="skill-tag">Social Media Management</span>
-                <span class="skill-tag">TikTok Affiliate Marketing</span>
-                <span class="skill-tag">Short-Form Content Creation</span>
-                <span class="skill-tag">PC Troubleshooting</span>
-                <span class="skill-tag">Basic Electrical Wiring</span>
-                <span class="skill-tag">Social Media Analytics</span>
-                <span class="skill-tag">Copywriting</span>
-                <span class="skill-tag">English Communication</span>
-                <span class="skill-tag">Time Management</span>
+            <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+                <div>
+                    <h3 class="text-indigo-300 font-bold uppercase text-xs mb-4">Why Hire Me</h3>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white mb-6">Creative, Technical, and Client-Ready.</h2>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
+                        I can help with the creative side and the technical side: editing, captions, AI tools, simple programming, tracking, communication, and consistent delivery.
+                    </p>
+                    <a href="#contact" class="gradient-bg inline-flex text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">Start a Project</a>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="client-card">
+                        <div class="client-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="text-lg font-black mb-2">Fast Turnaround</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Built for social media work where speed, clean revisions, and reliable delivery matter.</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-icon"><i class="fas fa-building-user"></i></div>
+                        <h3 class="text-lg font-black mb-2">Real Estate Experience</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Comfortable with property videos, listing research, flyer edits, and local market support.</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-icon"><i class="fas fa-toolbox"></i></div>
+                        <h3 class="text-lg font-black mb-2">Creative + Admin Tools</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Uses design, AI, Google Workspace, CRM, ATS, and reporting tools in one workflow.</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-icon"><i class="fas fa-code-branch"></i></div>
+                        <h3 class="text-lg font-black mb-2">Programming Support</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Can build simple web pages, organize digital workflows, and use AI programming tools to speed up client tasks.</p>
+                    </div>
+                    <div class="client-card">
+                        <div class="client-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                        <h3 class="text-lg font-black mb-2">Short-Form Trend Awareness</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Edits with hooks, pacing, captions, and formats that fit TikTok, Reels, and Shorts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tools" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="toolkit-panel p-6 md:p-10">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                    <div>
+                        <h3 class="text-indigo-300 font-bold uppercase text-xs mb-4">Tools & Platforms</h3>
+                        <h2 class="text-4xl md:text-5xl font-black tracking-tighter text-white">Tools I Use</h2>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-xl">
+                        A practical stack for content planning, real estate listing support, short-form editing, social media management, and client-ready reporting.
+                    </p>
+                </div>
+
+                <div class="space-y-10">
+                    <div>
+                        <p class="tool-category mb-4">Creative & AI Tools</p>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="tool-card">
+                                <span class="tool-icon tool-edit"><i class="fas fa-cut"></i></span>
+                                <div>
+                                    <p class="tool-name">CapCut</p>
+                                    <p class="tool-use">Reels, TikTok edits, captions</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-edit"><i class="fas fa-pen-nib"></i></span>
+                                <div>
+                                    <p class="tool-name">Canva</p>
+                                    <p class="tool-use">Flyers, story designs, layouts</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-ai"><i class="fas fa-wand-magic-sparkles"></i></span>
+                                <div>
+                                    <p class="tool-name">ChatGPT</p>
+                                    <p class="tool-use">Hooks, captions, content ideas</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-ai"><i class="fas fa-gem"></i></span>
+                                <div>
+                                    <p class="tool-name">Google Gemini AI</p>
+                                    <p class="tool-use">Research and creative support</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-ai"><i class="fas fa-film"></i></span>
+                                <div>
+                                    <p class="tool-name">Higgsfield AI</p>
+                                    <p class="tool-use">AI video generation and creative visuals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="tool-category mb-4">Programming & Automation</p>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="tool-card">
+                                <span class="tool-icon tool-ai"><i class="fas fa-code"></i></span>
+                                <div>
+                                    <p class="tool-name">Programming</p>
+                                    <p class="tool-use">Web pages, scripts, and workflow tools</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-ai"><i class="fas fa-robot"></i></span>
+                                <div>
+                                    <p class="tool-name">AI Programming</p>
+                                    <p class="tool-use">AI-assisted automations and prompts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="tool-category mb-4">Social Platforms</p>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="tool-card">
+                                <span class="tool-icon tool-meta"><i class="fab fa-facebook-f"></i></span>
+                                <div>
+                                    <p class="tool-name">Facebook</p>
+                                    <p class="tool-use">Page content and campaigns</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-meta"><i class="fab fa-instagram"></i></span>
+                                <div>
+                                    <p class="tool-name">Instagram</p>
+                                    <p class="tool-use">Stories, reels, engagement</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-edit"><i class="fab fa-tiktok"></i></span>
+                                <div>
+                                    <p class="tool-name">TikTok</p>
+                                    <p class="tool-use">Short-form content and trends</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-workflow"><i class="fab fa-pinterest-p"></i></span>
+                                <div>
+                                    <p class="tool-name">Pinterest</p>
+                                    <p class="tool-use">Visual references and ideas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="tool-category mb-4">Real Estate Platforms</p>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="tool-card">
+                                <span class="tool-icon tool-realestate"><i class="fas fa-building"></i></span>
+                                <div>
+                                    <p class="tool-name">StreetEast</p>
+                                    <p class="tool-use">Property listing research</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-realestate"><i class="fas fa-house-chimney"></i></span>
+                                <div>
+                                    <p class="tool-name">Zillow</p>
+                                    <p class="tool-use">Listing details and market checks</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-realestate"><i class="fas fa-map-location-dot"></i></span>
+                                <div>
+                                    <p class="tool-name">Georgia Listings</p>
+                                    <p class="tool-use">Location and property support</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-realestate"><i class="fas fa-location-crosshairs"></i></span>
+                                <div>
+                                    <p class="tool-name">Google Maps</p>
+                                    <p class="tool-use">Area research and directions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="tool-category mb-4">Admin, Collaboration & Reporting</p>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="tool-card">
+                                <span class="tool-icon tool-google"><i class="fas fa-envelope"></i></span>
+                                <div>
+                                    <p class="tool-name">Gmail</p>
+                                    <p class="tool-use">Client communication</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-google"><i class="fas fa-video"></i></span>
+                                <div>
+                                    <p class="tool-name">Google Meet / Zoom</p>
+                                    <p class="tool-use">Meetings and client calls</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-google"><i class="fas fa-table"></i></span>
+                                <div>
+                                    <p class="tool-name">Google Sheets</p>
+                                    <p class="tool-use">Trackers and reports</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-google"><i class="fas fa-file-lines"></i></span>
+                                <div>
+                                    <p class="tool-name">Docs / Drive</p>
+                                    <p class="tool-use">Files, briefs, and scripts</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-office"><i class="fas fa-file-excel"></i></span>
+                                <div>
+                                    <p class="tool-name">Excel</p>
+                                    <p class="tool-use">Spreadsheets and data cleanup</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-office"><i class="fas fa-file-word"></i></span>
+                                <div>
+                                    <p class="tool-name">Word</p>
+                                    <p class="tool-use">Documents and admin work</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-workflow"><i class="fas fa-users-gear"></i></span>
+                                <div>
+                                    <p class="tool-name">CRM / ATS</p>
+                                    <p class="tool-use">Lead and applicant tracking</p>
+                                </div>
+                            </div>
+                            <div class="tool-card">
+                                <span class="tool-icon tool-workflow"><i class="fas fa-briefcase"></i></span>
+                                <div>
+                                    <p class="tool-name">Indeed</p>
+                                    <p class="tool-use">Hiring support and sourcing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="workflow-card">
+                            <p class="tool-category mb-3">Workflow</p>
+                            <h4 class="font-black text-white text-xl mb-2">Creative + Technical Stack</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Shows clients that you can handle creative, admin, and research work from one workflow.</p>
+                        </div>
+                        <div class="workflow-card">
+                            <p class="tool-category mb-3">Professional Signal</p>
+                            <h4 class="font-black text-white text-xl mb-2">Real Estate Ready</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Highlights the platforms you use for property ads, listing support, and local market checks.</p>
+                        </div>
+                        <div class="workflow-card">
+                            <p class="tool-category mb-3">Client Confidence</p>
+                            <h4 class="font-black text-white text-xl mb-2">Reports & Communication</h4>
+                            <p class="text-slate-400 text-sm leading-relaxed">Makes your portfolio feel more organized, reliable, and ready for remote client work.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -652,6 +1151,11 @@
                     <div>
                         <h4 class="text-2xl font-bold">Property Ad Edit 01</h4>
                         <p class="text-slate-400 text-sm mt-2">A vertical real estate ad sample showing my pacing, transitions, and mobile-first video editing style.</p>
+                        <div class="project-meta">
+                            <span><strong>Goal:</strong> Promote a property listing in a scroll-friendly format.</span>
+                            <span><strong>Work:</strong> Video editing, pacing, captions, transitions, and visual polish.</span>
+                            <span><strong>Platforms:</strong> Facebook, Instagram Reels, TikTok, and short-form ads.</span>
+                        </div>
                     </div>
                 </div>
 
@@ -713,6 +1217,11 @@
                         </div>
                         <h4 class="text-2xl font-bold mt-5">Commercial Real Estate Flyer</h4>
                         <p class="text-slate-400 text-sm mt-2">A premium NYC commercial listings layout with strong typography, property categories, and contact-focused CTA placement.</p>
+                        <div class="project-meta">
+                            <span><strong>Goal:</strong> Present commercial real estate services clearly and professionally.</span>
+                            <span><strong>Work:</strong> Layout design, hierarchy, offer clarity, and contact CTA placement.</span>
+                            <span><strong>Use:</strong> Social posts, lead generation graphics, and client presentation materials.</span>
+                        </div>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-6">
@@ -794,12 +1303,20 @@
                             <img src="assets/images/smm-storytelling/story-tracker.png" alt="Story sequence performance tracker screenshot">
                         </div>
                         <h4 class="font-bold mt-4">Story Sequence Tracker</h4>
+                        <div class="project-meta">
+                            <span><strong>Goal:</strong> Track story performance and improve future content decisions.</span>
+                            <span><strong>Work:</strong> Organized metrics, content notes, and easy client reporting.</span>
+                        </div>
                     </div>
                     <div>
                         <div class="tracker-showcase rounded-[2rem] overflow-hidden border border-slate-700">
                             <img src="assets/images/smm-storytelling/video-performance-tracker.png" alt="Video performance tracker screenshot">
                         </div>
                         <h4 class="font-bold mt-4">Video Performance Tracker</h4>
+                        <div class="project-meta">
+                            <span><strong>Goal:</strong> Review short-form video results and spot stronger content angles.</span>
+                            <span><strong>Work:</strong> Views, engagement notes, content tracking, and reporting support.</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -824,6 +1341,10 @@
                             </video>
                         </div>
                         <h4 class="font-bold">AI Video Example</h4>
+                        <div class="project-meta">
+                            <span><strong>Goal:</strong> Create social-ready AI visual content for short-form use.</span>
+                            <span><strong>Work:</strong> AI concept support, generated visuals, and editing flow.</span>
+                        </div>
                     </div>
                     <div class="space-y-4">
                         <div class="portfolio-video rounded-[2rem] overflow-hidden border border-slate-700 shadow-xl shadow-black/20">
@@ -866,6 +1387,11 @@
                     </div>
                     <h4 class="text-2xl font-bold mt-5">Product Design Video Sample</h4>
                     <p class="text-slate-400 text-sm mt-2">A product-focused motion sample for social media and promotional use.</p>
+                    <div class="project-meta">
+                        <span><strong>Goal:</strong> Make product visuals feel polished and ready for promotion.</span>
+                        <span><strong>Work:</strong> Product-focused motion, presentation flow, and social media formatting.</span>
+                        <span><strong>Use:</strong> Beauty, e-commerce, product launch, and brand content.</span>
+                    </div>
                 </div>
 
                 <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-6">
@@ -912,25 +1438,39 @@
         </div>
     </section>
 
-    <footer class="py-24 bg-slate-900 text-white border-t border-slate-800 px-6">
+    <footer id="contact" class="py-24 bg-slate-900 text-white border-t border-slate-800 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20">
             <div>
                 <h2 class="text-5xl font-black tracking-tighter mb-8">Let's Connect.</h2>
+                <div class="availability-badge mb-6">Open for SMM, video editing, programming, AI automation, and real estate content projects</div>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-lg mb-8">
+                    Send your project details, preferred platforms, deadline, and sample references. I will reply within 24 hours with the next steps and what I can help you create.
+                </p>
                 <div class="space-y-4">
                     <p class="flex items-center gap-4"><i class="fas fa-envelope text-indigo-500"></i> jedjedp@gmail.com</p>
                     <p class="flex items-center gap-4"><i class="fab fa-whatsapp text-green-500"></i> +63 967 036 0019</p>
                     <p class="flex items-center gap-4"><i class="fas fa-map-marker-alt text-red-500"></i> Purok 4, Malabanban Sur, Candelaria, Quezon</p>
                 </div>
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <a href="mailto:jedjedp@gmail.com?subject=Project%20Inquiry%20for%20John%20Dhyll" class="gradient-bg text-white px-8 py-4 rounded-2xl font-bold text-center hover:scale-105 transition"><i class="fas fa-envelope mr-2"></i>Email Me</a>
+                    <a href="https://wa.me/639670360019" target="_blank" class="text-white px-8 py-4 rounded-2xl font-bold text-center border border-white/15 bg-white/5 hover:border-green-300/60 transition"><i class="fab fa-whatsapp mr-2"></i>Message on WhatsApp</a>
+                    <a href="https://drive.google.com/drive/folders/1gTzPPbOwiAuGmIYSPe7WwBNWAtjR-fo6?usp=sharing" target="_blank" class="text-white px-8 py-4 rounded-2xl font-bold text-center border border-white/15 bg-white/5 hover:border-cyan-300/60 transition"><i class="fas fa-file-arrow-down mr-2"></i>View Resume</a>
+                </div>
             </div>
             <div class="text-right flex flex-col justify-end">
-                <p class="text-slate-600 text-[10px] uppercase tracking-[0.5em] mb-4">True and Correct Information</p>
-                <p class="text-slate-400 text-sm">&copy; 2026 John Dhyll J. Padillo. Social Media Manager & Video Editor.</p>
+                <div class="client-card text-left mb-8">
+                    <p class="tool-category mb-3">Best Fit Clients</p>
+                    <h3 class="text-2xl font-black mb-3">Real estate teams, small businesses, and creators who need consistent social content.</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">I can support content ideas, editing, AI visuals, flyer graphics, posting assets, simple programming tasks, workflow automation, and performance reports.</p>
+                </div>
+                <p class="text-slate-600 text-[10px] uppercase mb-4">True and Correct Information</p>
+                <p class="text-slate-400 text-sm">&copy; 2026 John Dhyll J. Padillo. Social Media Manager, Video Editor & AI Programmer.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        const motionItems = document.querySelectorAll('section:not(:first-of-type) > div, .portfolio-video, .story-showcase, .product-showcase, .tracker-showcase');
+        const motionItems = document.querySelectorAll('section:not(:first-of-type) > div, .portfolio-video, .story-showcase, .product-showcase, .tracker-showcase, .tool-card, .workflow-card, .client-card');
 
         motionItems.forEach((item) => item.classList.add('motion-reveal'));
 
